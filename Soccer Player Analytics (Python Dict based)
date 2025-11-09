@@ -1,7 +1,12 @@
-# Crie um programa que gerencie o aproveitamento de um jogador de futebol.
-# O programa vai ler o nome do jogador e quantas partidas ele jogou. Depois vai ler a quantidade de gols feitos em cada partida.
-# No final, tudo isso será guardado num dicionário, incluindo o total de gols feitos durante o campeonato.
-# incluindo um sistema de visualização de detalhes do aproveitamento de cada jogador.
+# Um programa que gerencie o aproveitamento de um jogador de futebol. Coletando o nome do jogador e quantas partidas ele jogou. 
+# Depois vai ler a quantidade de gols feitos em cada partida. Ao final, será guardado num dicionário, incluindo o total de gols feitos 
+# durante o campeonato, iincluindo um sistema de visualização de detalhes do aproveitamento de cada jogador.
+
+#---------------------------------------------------------------------------
+# Objetivo: Coletar dados de 4 pessoas e gerar relatórios de média de idade,
+#           mulheres jovens e o homem mais velho do grupo.
+#---------------------------------------------------------------------------
+
 geral = []
 
 while True:
