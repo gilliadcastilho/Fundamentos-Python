@@ -1,0 +1,49 @@
+# Crie um programa que gerencie o aproveitamento de um jogador de futebol.
+# O programa vai ler o nome do jogador e quantas partidas ele jogou. Depois vai ler a quantidade de gols feitos em cada partida.
+# No final, tudo isso será guardado num dicionário, incluindo o total de gols feitos durante o campeonato.
+# incluindo um sistema de visualização de detalhes do aproveitamento de cada jogador.
+geral = []
+
+while True:
+    cadastro = {}
+    jogador = input('Nome: ').upper()
+    partidas = int(input('Total de partidas: '))
+
+    list_gols = []
+    for p in range(partidas):
+        list_gols.append(int(input(f'Quantos gols na partida {p+1}ª: ')))
+
+    cadastro['Nome'] = jogador
+    cadastro['Gols'] = list_gols
+    cadastro['Total gols'] = sum(list_gols)
+    geral.append(cadastro.copy())
+
+    while True:
+        perg = input('Quer continuar? [S/N]').upper().strip()
+        if perg in 'SN':
+            break
+    if perg == 'N':
+        break
+
+print('='* 11, 'TABELA', '='*11)
+print(f'{'Nº.':<5}{'NOME':<10}{'PARTIDAS':<10}{'TOTAL':>5}')
+for i, a in enumerate(geral):
+    print(f'{i+1:<5}{a["Nome"]:<10}{len(a["Gols"]):<10}{a["Total gols"]:>5}')
+
+while True:
+    print('=' * 30)
+    perg = int(input('Deseja ver dados de qual jogador [999 SAIR]? '))
+    print('=' * 30)
+    if perg == 999:
+        break
+    ajuste = perg - 1
+    if 0 <= ajuste < len(geral):
+        print(f'== LEVANTAMENTO DO JOGADOR {geral[ajuste]["Nome"]} ==')
+        for i, g in enumerate(geral[ajuste]['Gols']):
+            print(f'Na partida {i + 1}, fez {g} gols.')
+        print(f"Total de {geral[ajuste]['Total gols']} gols.")
+    else:
+        print(f'Erro! Não existe jogador com o codigo {perg}.')
+
+print('Finalizando...')
+print('VOLTE SEMPRE')
